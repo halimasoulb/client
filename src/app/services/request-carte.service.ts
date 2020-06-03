@@ -20,10 +20,10 @@ export class RequestCarteService {
     return this.httpClient.get("https://app-sad9a.herokuapp.com/requestCartCredit/"+vari)
   }
   public updatecarte(vari,data){
-    return this.httpClient.put("https://app-sad9a.herokuapp.com/requestCartCredit/terminer/"+vari,data)
+    return this.httpClient.put("https://app-client-dep.herokuapp.com/requestCartCredit/terminer/"+vari,data)
   }
   // a revoir
   public voircartes(vari){
-    return this.httpClient.get<Requestcb[]>("https://app-sad9a.herokuapp.com/requestCartCredit/ByCompte/"+vari)
+    return this.httpClient.get<Requestcb[]>("https://app-client-dep.herokuapp.com/requestCartCredit/ByCompte/"+vari)
   }
 }

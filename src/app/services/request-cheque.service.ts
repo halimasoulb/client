@@ -21,14 +21,14 @@ export class RequestChequeService {
     return this.httpClient.get("https://app-sad9a.herokuapp.com/requestCC/"+vari)
   }
   public updatecarte(vari,data){
-    return this.httpClient.put("https://app-sad9a.herokuapp.com/requestCC/update/"+vari,data)
+    return this.httpClient.put("https://app-client-dep.herokuapp.com/requestCC/update/"+vari,data)
   }
   public voircartes(vari){
-    return this.httpClient.get<requestcc[]>("https://app-sad9a.herokuapp.com/requestCC/ByClient/"+vari)
+    return this.httpClient.get<requestcc[]>("https://app-client-dep.herokuapp.com/requestCC/ByClient/"+vari)
   }
 
   public getCompteCheckByClient(vari){
-    return this.httpClient.get<compteCheque[]>("https://app-sad9a.herokuapp.com/cheque/comptes/client/"+vari)
+    return this.httpClient.get<compteCheque[]>("https://app-client-dep.herokuapp.com/cheque/comptes/client/"+vari)
   }
 
 
