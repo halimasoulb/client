@@ -14,7 +14,7 @@ import { Client } from '../Models/Compte.Model';
 export class AuthenticationServiceService {
 
   constructor(private _http: HttpClient,private router : Router) { }
-  baseUrl = "https://app-client-dep.herokuapp.com/";
+  baseUrl = "https://app-client-dep.herokuapp.com";
 
    login(clientDetail : LoginCredentils) : Observable<any>
   {
