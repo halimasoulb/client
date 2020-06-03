@@ -1,0 +1,39 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light first_nav" >
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item" *ngIf="!isAuthenticated">
+        <a class="nav-link" routerLink=".">Rejoinez-nous</a>
+      </li>
+      <li class="nav-item" *ngIf="!isAuthenticated">
+        <a class="nav-link" routerLink="login">Se connecter</a>
+      </li>
+
+      <li class="nav-item" *ngIf="isAuthenticated">
+        <a class="nav-link" routerLink="." (click)="logout()">Logout</a>
+      </li>
+
+      <li class="nav-item" *ngIf="isAuthenticated">
+        <a class="nav-link" routerLink="profile">Profile</a>
+      </li>
+
+    </ul>
+  </div>
+</nav>
+<nav class="navbar navbar-light second_nav">
+  <a class="navbar-brand" *ngIf="!isAuthenticated">Welcome to Bank</a>
+  <a class="navbar-brand" *ngIf="isAuthenticated">Welcome Back {{clientname}}  </a>
+  <a class="navbar-brand" *ngIf=" isAuthenticated && hasRoute('/request') ">
+    <mat-button-toggle-group>
+        <mat-button-toggle routerLink="/request/creditCard" (click)="clickCb()">Demander CB</mat-button-toggle>
+        <mat-button-toggle  routerLink="/request/ccheque" (click)="clickCheck()">Demander Checkbook</mat-button-toggle>
+      </mat-button-toggle-group>
+      </a>
+       
+
+
+</nav>
+
+

@@ -1,0 +1,15 @@
+<h1>Demande d'attestation de RIB</h1>
+
+<div > 
+        
+     <app-dashboard-account-table [accounts]="accounts" (ccompte)="oncompte($event)"></app-dashboard-account-table>
+      </div>
+<div class="container">
+<div  class="info">
+    <p *ngIf="selected" >Account number : {{currentAccount.numcompte}}</p>
+    <p  *ngIf="selected"class="balance">${{currentAccount.balance}}</p>
+    <p *ngIf="!selected">Veuillez selectionner un compte du tableau : </p>
+
+</div>
+<button mat-raised-button>Enregistrer sous forme PDF</button>
+</div>

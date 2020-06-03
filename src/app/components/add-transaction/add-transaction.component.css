@@ -1,0 +1,38 @@
+form{
+    font-size: 8pt;
+    width: 600px;
+    height: 200px;
+    margin-left:50px;
+    margin-bottom: 50px;
+    }
+    
+    p{
+        font-family: sans-serif;
+    }
+    .info{
+        background-color:rgb(224, 221, 209);
+        display: flex;                  /* establish flex container */
+        flex-direction: row;            /* default value; can be omitted */
+        flex-wrap: nowrap;              /* default value; can be omitted */
+        justify-content: space-between; 
+        margin-bottom: 2%;
+    }
+    .balance{
+        color: green;
+    }
+    button{
+        background-color: #14426e;
+        float: right;
+        color: white;
+        font-weight: 200;
+    }
+    h1{
+        text-align: center;
+    }
+    .container{
+        width: 100%;
+    }
+    p{
+        margin: 1.5%;
+        font-size: 12pt;
+    }

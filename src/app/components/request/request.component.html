@@ -1,0 +1,108 @@
+<app-navbar (myEvent)="done($event)" (myEvent2)="done2($event)"></app-navbar>
+
+
+<div class="container d-flex flex-wrap" *ngIf="!hasRoute('/ccheque') && !CbClicked && !CcClicked && !hasRoute('/creditCard') ">
+  <div class="row1">
+
+
+    <h4>Bonjour, Vous pouvez visualiser vos demandes !</h4>
+
+    <img src="../../assets/img/online.png">
+
+
+</div>
+  <div class="row2">
+      <table class="table">
+          <thead>
+            <tr>
+
+              <th scope="col">Type</th>
+              <th scope="col">Date</th>
+              <th scope="col">Active</th>
+
+            </tr>
+          </thead>
+          <tbody *ngFor="let c of Ccrequest">
+            <tr>
+
+              <td>
+              <div class="firstRow">
+
+                <img src="../../assets/img/cheque.png">
+
+                <div style="display: block;line-height: 14px;">
+                <span style="font-weight: 500; font-size: 16px;">Carnet cc </span>
+                <span>Classique</span>
+              </div>
+
+
+              </div>
+              </td>
+              <td>
+                <div style="display: flex;
+                /* width: 140px; */
+                flex-flow: column;
+                font-size: 14px;">
+                <span>{{c.dateRequest |date}}</span>
+                <span style="font-weight:500">{{c.dateRequest | date:'shortTime'}}</span>
+                </div>
+
+
+
+              </td>
+              <td>{{c.closeRequest}}</td>
+
+            </tr>
+
+          </tbody>
+        </table>
+  </div>
+  <div class="row3">
+      <table class="table">
+          <thead>
+            <tr>
+
+              <th scope="col">Type</th>
+              <th scope="col">Date</th>
+              <th scope="col">Active</th>
+
+            </tr>
+          </thead>
+          <tbody *ngFor="let c of Cbrequest">
+            <tr>
+
+              <td>
+              <div class="firstRow">
+
+                <img id="img2" src="../../assets/img/gold.png">
+
+                <div style="display: block;line-height: 14px;">
+                <span style="font-weight: 500; font-size: 16px;">Carte </span>
+                <span>{{c.cardType}}</span>
+              </div>
+
+
+              </div>
+              </td>
+              <td>
+                <div style="display: flex;
+                flex-flow: column;
+                font-size: 14px;">
+                <span>{{c.dateRequest |date}}</span>
+                <span style="font-weight:500">{{c.dateRequest | date:'shortTime'}}</span>
+                </div>
+
+
+
+              </td>
+              <td>{{c.closeRequest}}</td>
+
+            </tr>
+
+          </tbody>
+        </table>
+  </div>
+</div>
+<app-ccheque [myCheckbook]="Ccrequest" [myChequeAccount]="comptesCheques" *ngIf="hasRoute('/ccheque')"></app-ccheque>
+<app-carte-bancaire *ngIf="hasRoute('/creditCard')"  [myChequeAccount]="comptesCheques"></app-carte-bancaire>
+

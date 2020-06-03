@@ -1,0 +1,15 @@
+<div class="  d-flex flex-column align-items-center">
+  <div class="card_image">
+      <img class="img-responsive carte" src="../../../assets/img/card_empty.png">
+
+  <div class="top-left">{{this.owner.firstName}}  {{this.owner.lastName}}</div>
+  <br>
+  <div class="top-left1">{{this.carte.numcarte}}</div>
+
+  <div class="bottom-right">Expiration</div>
+  <div class="bottom-right1"> {{this.carte.expiration |  date:'shortDate' }}</div>
+
+  </div>
+
+    <button class="btn btn-danger">désactiver Carte</button>
+  </div>

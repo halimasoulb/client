@@ -1,0 +1,100 @@
+<!--div class="container text-center">
+  
+  
+  <form [formGroup]="form" #LoginInformation (ngSubmit)="Login(LoginInformation)" >  
+    <h2>Login</h2>  
+  
+    <div   class="row">  
+      <div class=" col-md-offset-4 col-md-4">  
+          <label for="email"> Email </label>  
+          <input formControlName="email" class="form-control" type="text">   
+      </div>  
+    </div>  
+    
+    <div class="row">  
+      <div class=" col-md-offset-4 col-md-4">  
+          <label for="password"> Password </label>  
+          <input formControlName="password" class="form-control" type="password">   
+      </div>  
+    </div>  
+    
+    <div class="row" style="margin-top: 40px;">  
+      <div class="col-md-offset-4 col-md-4">  
+          <button class="btn btn-md btn-primary btn-style"  >Login</button>  
+      </div>  
+    </div>  
+    
+  </form>  
+  </div -->  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+          <div class="card card-signin my-5">
+            <div class="card-body">
+              <h5 class="card-title text-center">Sign In</h5>
+              
+              <form   [formGroup]="form" class="form-signin"   #LoginInformation (ngSubmit)="Login(LoginInformation)">
+                <div class="form-label-group">
+                  <input   [class.is-invalid] = "form.get('email').invalid && form.get('email').touched" type="email"  formControlName="email"  name="email"  id="inputEmail" class="form-control" placeholder="Email ">
+                  <label for="inputEmail"  ></label>
+                  <div *ngIf="(Email.invalid && Email.touched) || Email.dirty">
+                    <small *ngIf="Email.errors?.required" class="text-danger">The email is required</small>
+                    
+                    <small *ngIf="Email.errors?.pattern" class="text-danger">Please provide a valid email address</small>
+                  </div>
+                </div>
+  
+                <div class="form-label-group">
+                  <input  [class.is-invalid] = "form.get('password').invalid && form.get('password').touched" type="password" formControlName="password" name="password" id="inputPassword" class="form-control" placeholder="Password"  >
+                  <label for="inputPassword" ></label>
+                  <div *ngIf="(Password.invalid && Password.touched) || Password.dirty">
+                    <small *ngIf="Password.errors?.required" class="text-danger">The password is required</small>
+                  </div>
+                </div>
+  
+                <div class="custom-control custom-checkbox mb-3">
+                  <input type="checkbox" class="custom-control-input" id="customCheck1">
+                  <label class="custom-control-label" for="customCheck1">Remember password</label>
+                </div>
+                <button class="btn btn-lg btn-primary btn-block text-uppercase"    type="submit">Sign in</button>
+                <hr class="my-4">
+                <div class="text-danger" *ngIf="isFailed">
+                  <small >Email ou mot de passe incorrect
+                  </small>
+                </div>
+                <!--button class="btn btn-lg btn-google btn-block text-uppercase" type="submit"><i class="fab fa-google mr-2"></i> Sign in with Google</button>
+                <button class="btn btn-lg btn-facebook btn-block text-uppercase" type="submit"><i class="fab fa-facebook-f mr-2"></i> Sign in with Facebook</button -->
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body >
+
+
+
+
+
+
+
+
+<!--label>firstname</label><input type="text" name="nom" [(ngModel)]=username>
+<label>password</label><input type="password" name="pass" [(ngModel)]=password>
+<button class="btn btn-success" (click)="handle()"> se connecter</button -->
