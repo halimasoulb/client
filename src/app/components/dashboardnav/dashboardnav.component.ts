@@ -1,7 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ClientDataService } from 'src/app/services/clientdataservice.service';
 import { CompteService } from 'src/app/services/compte-service.service';
-import { AuthenticationServiceService } from '../../Services/authentication-service.service';
+import { AuthenticationServiceService } from 'src/app/Services/authentication-service.service';
+
 
 @Component({
   selector: 'app-dashboardnav',
