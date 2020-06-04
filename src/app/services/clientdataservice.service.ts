@@ -2,12 +2,13 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Client } from '../Models/Compte.Model';
+import { environment } from 'src/environments/environment.prod';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ClientDataService {
-  Baseurl  = "https://app-client-dep.herokuapp.com/Client/";
+  Baseurl  = `${environment.apiUrl}`;
   constructor(private _http:HttpClient) { }
 
   
@@ -16,7 +17,7 @@ export class ClientDataService {
   // }
   getClient() : Observable<Client>{
     let id = localStorage.getItem("id");
-    return this._http.get<Client>(this.Baseurl+id);
+    return this._http.get<Client>(this.Baseurl+"/Client/"+id);
   }
 
 }

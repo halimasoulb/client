@@ -7,6 +7,7 @@ import {
     HttpHandler,
     HttpRequest
 } from '@angular/common/http';
+import { environment } from 'src/environments/environment.prod';
 
 
 @Injectable()
@@ -15,6 +16,7 @@ export class Interceptor implements HttpInterceptor{
     private token ;
     
     intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
+      const allowedOrigins = [environment.apiUrl];
      
         if (localStorage.getItem("token") != null)
         {
