@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormGroup, Validators, FormControl,ReactiveFormsModule } from '@angular/forms';
 import { LoginCredentils} from '../../Models/LoginCredentials.Model';
-import { AuthenticationServiceService } from 'src/app/Services/authentication-service.service';
+import { AuthenticationServiceService } from '../../Services/authentication-service.service';
 
 
 

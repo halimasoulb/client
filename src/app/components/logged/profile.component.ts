@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
-import { AuthenticationServiceService } from 'src/app/Services/authentication-service.service';
+import { AuthenticationServiceService } from '../../Services/authentication-service.service';
 
 @Component({
   selector: 'app-profile',
