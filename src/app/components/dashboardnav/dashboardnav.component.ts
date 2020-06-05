@@ -1,8 +1,9 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ClientDataService } from 'src/app/services/clientdataservice.service';
 import { CompteService } from 'src/app/services/compte-service.service';
-/*import { AuthenticationServiceService } from 'src/app/Services/authentication-service.service';*/
-import {AuthenticationServiceService} from 'src/app/Services/authentication-service.service';
+
+
+import {AuthService} from 'src/app/services/auth.service';
 
 
 @Component({
@@ -18,7 +19,7 @@ export class DashboardnavComponent implements OnInit {
   
 currentUser:string='';
 vall: string;
-  constructor(private _authService : AuthenticationServiceService, private client : ClientDataService, private account : CompteService) {
+  constructor(private _authService : AuthService, private client : ClientDataService, private account : CompteService) {
     this.vall=localStorage.getItem("id");
  
   }

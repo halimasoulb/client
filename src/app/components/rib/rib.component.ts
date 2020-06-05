@@ -5,8 +5,8 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { TransactionServiceService } from 'src/app/services/transaction-service.service';
 
 import { Transaction } from 'src/app/Models/Transaction.Model';
-/*import { AuthenticationServiceService } from 'src/app/Services/authentication-service.service'; */
-import {AuthenticationServiceService} from 'src/app/Services/authentication-service.service';
+import { AuthService } from 'src/app/services/auth.service';
+
 
 @Component({
   selector: 'app-rib',
@@ -21,7 +21,7 @@ export class RibComponent implements OnInit {
  public isAuthenticated:boolean;
 
  constructor(private clientsservice:CompteService,private router:Router,private routeactuel:ActivatedRoute,
-   private tranService : TransactionServiceService, private _authservice : AuthenticationServiceService) { }
+   private tranService : TransactionServiceService, private _authservice : AuthService) { }
 
  ngOnInit() {
   if(!this._authservice.isLoggedIn()){

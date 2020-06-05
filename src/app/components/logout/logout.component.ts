@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-/*import { AuthenticationServiceService } from 'src/app/Services/authentication-service.service'; */
-import {AuthenticationServiceService} from 'src/app/Services/authentication-service.service';
+import { AuthService } from 'src/app/services/auth.service';
+
 
 
 
@@ -12,7 +12,7 @@ import {AuthenticationServiceService} from 'src/app/Services/authentication-serv
 })
 export class LogoutComponent implements OnInit {
 
-  constructor(private authService : AuthenticationServiceService,private router:Router) {
+  constructor(private authService : AuthService,private router:Router) {
     //location.reload();
   }
 

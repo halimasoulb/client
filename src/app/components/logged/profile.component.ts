@@ -3,7 +3,8 @@ import { Component, OnInit } from '@angular/core';
 
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
-import { AuthenticationServiceService } from 'src/app/Services/authentication-service.service';
+import { AuthService } from 'src/app/services/auth.service';
+
 
 
 @Component({
@@ -14,7 +15,7 @@ import { AuthenticationServiceService } from 'src/app/Services/authentication-se
 export class ProfileComponent implements OnInit {
 
   valll : string
-  constructor(private _authService:AuthenticationServiceService,private _router:Router)
+  constructor(private _authService:AuthService,private _router:Router)
      { this.valll=localStorage.getItem("id"); }
 
   ngOnInit(): void {

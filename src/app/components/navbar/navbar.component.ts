@@ -2,8 +2,8 @@ import { Component, OnInit, Output,EventEmitter, Input } from '@angular/core';
 
 import { Router } from '@angular/router';
 import { PassDataService } from '../../services/pass-data.service';
-/*import { AuthenticationServiceService } from 'src/app/Services/authentication-service.service'; */
-import {AuthenticationServiceService} from 'src/app/Services/authentication-service.service';
+import { AuthService } from 'src/app/services/auth.service';
+
 
 
 @Component({
@@ -26,7 +26,7 @@ export class NavbarComponent implements OnInit {
 
 
 
-  constructor(private authService : AuthenticationServiceService,private router:Router,public passDataService:PassDataService) {
+  constructor(private authService : AuthService,private router:Router,public passDataService:PassDataService) {
   passDataService.columnVars=false
   }
 

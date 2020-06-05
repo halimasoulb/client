@@ -8,8 +8,8 @@ import { TransactionServiceService } from 'src/app/services/transaction-service.
 import { ClientDataService } from 'src/app/services/clientdataservice.service';
 import { CartebserviceService } from '../../services/cartebservice.service';
 import { CarteB } from 'src/app/Models/Carteb.Model';
-/*import { AuthenticationServiceService } from 'src/app/Services/authentication-service.service'; */
-import {AuthenticationServiceService} from 'src/app/Services/authentication-service.service';
+import { AuthService } from 'src/app/services/auth.service';
+
 
 @Component({
   selector: 'app-transactions-history',
@@ -29,7 +29,7 @@ export class TransactionsHistoryComponent implements OnInit {
   containsCarte : boolean = false;
 
   constructor(private compteServ : CompteService, private _clientService : ClientDataService
-    , private _authSerivce : AuthenticationServiceService
+    , private _authSerivce : AuthService
     ,private _router :Router,
     private tranService : TransactionServiceService,
     private cbancaireService : CartebserviceService) { }

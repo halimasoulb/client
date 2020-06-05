@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-/*import { AuthenticationServiceService } from 'src/app/Services/authentication-service.service';*/
+
 import {AuthenticationServiceService} from 'src/app/Services/authentication-service.service';
+import { AuthService } from 'src/app/services/auth.service';
 
 
 
@@ -12,7 +13,7 @@ import {AuthenticationServiceService} from 'src/app/Services/authentication-serv
 })
 export class NavComponent implements OnInit {
   isAuthenticated : boolean=false;
-  constructor(private authService : AuthenticationServiceService, private router:Router) { }
+  constructor(private authService : AuthService, private router:Router) { }
 
   ngOnInit() {
     this.isAuthenticated=this.authService.isLoggedIn();

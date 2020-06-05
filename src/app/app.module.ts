@@ -23,7 +23,7 @@ import { ProfileComponent } from './components/profile/profile.component'
 import { LogoutComponent } from './components/logout/logout.component';
 import { RequestComponent } from './components/request/request.component';
 import { PassDataService } from './services/pass-data.service';
-/*import { AuthenticationServiceService } from './Services/authentication-service.service';*/
+import {AuthService} from './services/auth.service'
 import {AuthenticationServiceService} from './Services/authentication-service.service';
 
 import { NgxPaginationModule} from 'ngx-pagination';
@@ -81,7 +81,7 @@ import { RibComponent } from './components/rib/rib.component';
     ChartsModule
 
   ],
-  providers: [AuthenticationServiceService,{
+  providers: [AuthService,{
     provide : HTTP_INTERCEPTORS,
     useClass: Interceptor,
     multi : true
