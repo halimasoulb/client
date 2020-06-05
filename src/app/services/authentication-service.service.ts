@@ -14,8 +14,10 @@ import { environment } from 'src/environments/environment.prod';
 })
 export class AuthenticationServiceService {
 
-  constructor(private _http: HttpClient,private router : Router) { }
   baseUrl = `${environment.apiUrl}`;
+  
+  constructor(private _http: HttpClient,private router : Router) { }
+ 
 
    login(clientDetail : LoginCredentils) : Observable<any>
   {
