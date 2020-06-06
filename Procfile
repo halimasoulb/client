@@ -1,1 +1,1 @@
-web:node src/client-front.js
+web:node src/data-amine.js
